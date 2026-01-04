@@ -9,6 +9,7 @@ export const sendMessage = async (message: string, context: string): Promise<Cha
   // Simulate network delay
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
+  console.log('User message:', message);
   console.log('Context sent to AI:', context);
 
   let responseContent = "I'm ChatGPT2, but I'm just a mock right now! I received your message.";
