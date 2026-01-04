@@ -1,0 +1,16 @@
+@import './reset.css';
+@import './variables.css';
+
+body {
+  font-family: var(--font-family-sans);
+  background: hsl(var(--color-bg-main));
+  color: hsl(var(--color-text-primary));
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
