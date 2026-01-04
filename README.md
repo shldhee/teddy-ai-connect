@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# Teddy AI Connect 🧸💬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Teddy AI Connect**는 모던한 다크 모드 UI와 "페이지와 대화하기" 기능을 제공하는 React 기반 웹 애플리케이션입니다. 사용자는 현재 보고 있는 페이지의 내용을 바탕으로 AI(ChatGPT2 모의 서비스)와 대화할 수 있습니다.
 
-Currently, two official plugins are available:
+## ✨ 주요 기능
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **프리미엄 다크 모드**: 눈이 편안하고 세련된 `slate` / `blue-gray` 톤의 다크 테마를 기본으로 제공합니다.
+- **AI 채팅 통합**: 페이지 우측 하단의 플로팅 버튼을 통해 언제든지 채팅창을 열 수 있습니다.
+- **페이지 컨텍스트 인식**: 채팅 시 현재 페이지의 텍스트 내용을 AI에게 함께 전송하여, 문맥에 맞는 대화가 가능합니다.
+- **반응형 디자인**: 다양한 화면 크기에 최적화된 UI를 제공합니다.
 
-## React Compiler
+## 🛠 기술 스택
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Core**: React 19, TypeScript
+- **Build Tool**: Vite
+- **Styling**: Vanilla CSS (Variables, CSS Modules)
+- **Design**: Premium Dark Theme Custom Implementation
 
-## Expanding the ESLint configuration
+## 🚀 시작하기
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+이 프로젝트를 로컬에서 실행기 위해서는 Node.js가 필요합니다.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. 저장소 클론
+```bash
+git clone https://github.com/shldhee/teddy-ai-connect.git
+cd teddy-ai-connect
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2. 의존성 설치
+```bash
+npm install
 ```
+
+### 3. 개발 서버 실행
+```bash
+npm run dev
+```
+브라우저에서 `http://localhost:5173` (또는 터미널에 표시된 포트)로 접속하여 앱을 확인하세요.
+
+## 📂 프로젝트 구조
+
+```
+src/
+├── components/     # UI 컴포넌트 (ChatBox 등)
+├── services/       # 비즈니스 로직 (chatService 등)
+├── utils/          # 유틸리티 함수 (pageContext 등)
+├── styles/         # CSS 스타일 파일
+└── App.tsx         # 메인 애플리케이션 컴포넌트
+```
+
+## 📝 라이선스
+
+이 프로젝트는 MIT 라이선스 하에 배포됩니다.
